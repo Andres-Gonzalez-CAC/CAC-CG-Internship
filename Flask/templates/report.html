@@ -1,0 +1,13 @@
+{% extends 'structure.html' %}
+{%block title%}Report{%endblock title%}
+
+{%block main%}
+    <h1>Data Query Results</h1>
+    {%if feedback%} 
+        <p><strong>{{feedback}}</strong></p>
+    {%endif%}
+    <div>
+        {{table | safe}}
+    </div>
+
+{%endblock main%}
