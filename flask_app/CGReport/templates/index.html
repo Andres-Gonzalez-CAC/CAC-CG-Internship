@@ -1,0 +1,69 @@
+{%extends 'structure.html'%}
+
+
+{%block main%}
+
+    <div class="container">
+        <a class="btn btn-success" href="https://experience.arcgis.com/experience/d1eef9631d2d45f2aba74322eec33088">
+            Go To Web Application
+        </a>
+    </div>
+<!-- <button id="instructions" class="btn mt-2 mb-2 bg btn-success">Instructions</button>
+<div id="howto" class="container mg-t-3">
+    <p>
+        <h2>This application allows you to visually see different development opportunity
+        parcels.</h2><br />
+        <h3>Filters</h3> <br />
+        1. The Economic Development Opportunities filter allows you to search 
+        for parcels based on Acreage within a range, New Market Tax Credit(NMTC),
+        Foreign Trade Zone(FTZ), and Opportunity Zone(OZ).<br />
+
+        2. The Zoning filter allows you to select a Zoning type to display when the 
+        zoning layer is displayed.<br />
+
+        3. The APN filter allows you to search for specific parcels by parcel number (APN).
+    </p>
+    <p>
+        <h3>Layer Display</h3><br />
+        You can display or turn off layers using the layer display widget
+        located to the right in the map area. It looks like three stacked squares. 
+    </p>
+    <p>
+        <h3>Select Tool</h3><br />
+        The select tool is located in the top left of the map area. The dropdown arrow
+        allows you to select the method of selection. the 'Completely Contained'
+        will only select parcels that are fully contained by the selection shape. 
+        The 'Partially Contained' option will select parcels that are outside the selection 
+        shape but are intersected by the selection shape. The button directly adjacent
+        to the selection drop down arrow will clear your selection.
+    </p>
+    <p>
+        <h3>Results Page</h3><br />
+        Clicking the button at the bottom will take you to the results page. Here 
+        there are several buttons that add some functionality, these are located
+        just above the table to the right. The first button switches between all parcels
+        and the selected parcels. You are also able to 'cherry pick' parcels by clicking on them
+        to highlight them. The second button will clear your selection. The third button refreshes
+        the table and the fourth button allows you to export all of the parcels or just the parcels you 
+        have selected. The export button allows you to choose what type of file to export. We recommend
+        csv as it is able to be opened in Excel. 
+    </p>
+</div>
+
+
+<iframe width="100%" style="height:100vh;"
+    src="https://experience.arcgis.com/experience/d1eef9631d2d45f2aba74322eec33088">
+</iframe> -->
+
+
+<script>
+    window.addEventListener('load', function(){
+        var instructions = document.getElementById("instructions");
+        var show_ins = document.getElementById("howto"); 
+
+        instructions.addEventListener("click",function(){
+            show_ins.classList.toggle('show');
+        });
+    });
+</script>
+{%endblock%}

@@ -1,0 +1,29 @@
+{% extends 'structure.html' %}
+
+{% block main %}
+
+<div class='container'>
+    {% if message %}
+        <span>{{message}}</span>
+    {% endif %}
+    
+    {% if parcelresults %}
+        {{parcelresults | safe}}
+    {% endif %}
+
+</div>
+<script>
+    window.addEventListener('load',function(){
+
+        table = document.querySelector(".dataframe");
+            table.classList.add("table");
+            table.classList.add("table-striped");
+    
+            theadTh = document.querySelector("thead > tr");
+            theadTh.style.textAlign = "left";
+            theadTh.addAttribute("scope","col");
+
+            
+    });
+</script>
+{% endblock %}

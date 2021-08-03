@@ -1,0 +1,43 @@
+{% extends 'structure.html' %}
+
+
+{% block main %}
+    <h1>Parcel Search</h1>
+    {% if session['psmessage'] %}
+        <span>{{ session['psmessage'] }}</span>
+    {% endif %}
+    <form method="POST" action="">
+        <!-- {{ parcelForm.hidden_tag() }} -->
+        {{ parcelForm.hidden_tag() }}
+        
+        <fieldset>
+            <legend class ="border-bottom mt-4 mb-4">
+                Search by Acreage Range, Zoning, New Market Tax Credit 
+                and Opportunity Zone
+            </legend>
+            <div class ="form-group">
+                {{ parcelForm.aMin.label(class="form-control-label") }}
+                {{ parcelForm.aMin(class="form-control form-control-md") }}
+            </div>
+            <div class ="form-group">
+                {{ parcelForm.aMax.label(class="form-control-label") }}
+                {{ parcelForm.aMax(class="form-control form-control-md") }}
+            </div>
+            <div class ="form-group">
+                {{ parcelForm.ZONE.label(class="form-control-label") }}
+                {{ parcelForm.ZONE(class="form-select") }}
+            </div>
+            <div class ="form-group">
+                {{ parcelForm.NMTC.label(class="form-check-label") }}
+                {{ parcelForm.NMTC(class="form-select") }}
+            </div>
+            <div class ="form-group">
+                {{ parcelForm.OZ.label(class="form-check-label") }}
+                {{ parcelForm.OZ(class="form-select") }}
+            </div>
+            <div class ="form-group">
+                {{ parcelForm.submit(class="btn btn-success mt-2") }}
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

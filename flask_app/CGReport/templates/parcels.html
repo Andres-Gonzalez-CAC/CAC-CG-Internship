@@ -1,0 +1,14 @@
+{% extends 'structure.html' %}
+
+
+{% block main %}
+    <h1>Parcel Search</h1>
+    {% if message %}
+        <div>{{message}}</div>
+    {% endif %}
+
+    <a class="btn btn-success" href = "{{url_for('apnSearch')}}">Parcel Number Search</a>
+    <a class="btn btn-success" href = "{{url_for('zoneSearch')}}">Zoning Search</a>
+    <a class="btn btn-success" href = "{{url_for('parcelSearch')}}">Parcel Search</a>
+
+{% endblock %}
