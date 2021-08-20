@@ -2,27 +2,144 @@
 {%block title%}Report{%endblock title%}
 
 {%block main%}
-    <h1>Start Report</h1>
+    <h1>Reporting Tool</h1>
     
-    <div>
-        <span>To start a report, upload a ".csv" or ".xlsx" excel file you downloaded from the web map</span>
-        <br />
-        <form action ="{{url_for('report')}}" method="POST" enctype="multipart/form-data">
-            {{ form.hidden_tag() }}
-            <fieldset>
-                <legend class ="border-bottom mt-4 mb-4">
-                    Upload the File you Downloaded from the Web Experience Application
-                </legend>
-                <div class ="form-group">
-                    {{ form.file.label(class="form-control-label") }}
-                    {{ form.file(class="form-control form-control-md") }}
+    <form action= "" method="POST">
+        {{ ReportForm.hidden_tag() }}
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <!-- Title of the Accordion button-->
+                Site Information
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body" style = "background-color: darkgray;">
+                <!-- Body Section of the Accordion element This is where form elements will go-->
+                    {% for field in ReportForm %}
+                        {% if loop.index <=18 %}
+                            <div class="form-group">
+                            {{ field.label(class="form-control-label") }}
+                            {{ field(class="form-control form-control-md") }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
-                <div class ="form-group">
-                    {{ form.submit(class="btn btn-success mt-2") }}
-                </div>
-            
-            </fieldset>
-        </form>
-    </div>
+            </div>
+        </div>
 
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <!-- Title of the Accordion button-->
+                    Transportation Information
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style = "background-color: darkgray;">
+                    <!-- Body Section of the Accordion element This is where form elements will go-->
+                        {% for field in ReportForm %}
+                            {% if loop.index >18 and loop.index <= 33 %}
+                                <div class="form-group">
+                                {{ field.label(class="form-control-label") }}
+                                {{ field(class="form-control form-control-md") }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <!-- Title of the Accordion button-->
+                    Financial Information
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style = "background-color: darkgray;">
+                    <!-- Body Section of the Accordion element This is where form elements will go-->
+                        {% for field in ReportForm %}
+                            {% if loop.index >33 and loop.index <= 39 %}
+                            <div class="form-group">
+                                {{ field.label(class="form-control-label") }}
+                                {{ field(class="form-control form-control-md") }}
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    <!-- Title of the Accordion button-->
+                    Utilities
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style = "background-color: darkgray;">
+                    <!-- Body Section of the Accordion element This is where form elements will go-->
+                        {% for field in ReportForm %}
+                            {% if loop.index >39 and loop.index <= 68 %}
+                                <div class="form-group">
+                                    {{ field.label(class="form-control-label") }}
+                                    {{ field(class="form-control form-control-md") }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                    <!-- Title of the Accordion button-->
+                    Building Information
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style = "background-color: darkgray;">
+                    <!-- Body Section of the Accordion element This is where form elements will go-->
+                        {% for field in ReportForm %}
+                            {% if loop.index >68 and loop.index <= 81 %}
+                                <div class="form-group">
+                                {{ field.label(class="form-control-label") }}
+                                {{ field(class="form-control form-control-md") }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                    <!-- Title of the Accordion button-->
+                    Topography and Environmental
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style = "background-color: darkgray;">
+                    <!-- Body Section of the Accordion element This is where form elements will go-->
+                        {% for field in ReportForm %}
+                            {% if loop.index >81 and loop.index <= 112 %}
+                                <div class="form-group">
+                                    {{ field.label(class="form-control-label") }}
+                                    {{ field(class="form-control form-control-md") }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ ReportForm.submit(class="btn btn-success mt-2") }}
+    </form>
 {%endblock main%}

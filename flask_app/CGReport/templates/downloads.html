@@ -1,0 +1,14 @@
+{% extends 'structure.html' %}
+{%block title%}Report Success{%endblock title%}
+
+{%block main%}
+    <h1>Download Reports</h1>
+
+    {% if files %}
+        {% for file in files %}
+            <a target="_self" href= "https://localhost:5000/static/reports/{{file}}" class="btn btn-success mt-2" download>Download {{file}}</a>
+            <br />            
+        {% endfor %}
+    {% endif %}
+    <a href="{{url_for('index')}}" class="btn btn-success mt-2">Home</a>
+    {%endblock main%}

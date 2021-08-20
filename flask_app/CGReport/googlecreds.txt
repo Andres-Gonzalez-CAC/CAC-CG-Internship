@@ -1,0 +1,4 @@
+
+## email and password for google sheets
+email:casagrandeinternship@gmail.com
+pswd: &PU$7c0F
