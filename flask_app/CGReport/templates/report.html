@@ -18,7 +18,10 @@
                 <div class="accordion-body" style = "background-color: darkgray;">
                 <!-- Body Section of the Accordion element This is where form elements will go-->
                     {% for field in ReportForm %}
-                        {% if loop.index <=18 %}
+                        {% if loop.index == 1 %}
+                            {{ field.label(class="form-control-label")}}
+                            {{ field(class="form-control form-control-md",value=siteNum) }}
+                        {% elif loop.index <=18 %}
                             <div class="form-group">
                             {{ field.label(class="form-control-label") }}
                             {{ field(class="form-control form-control-md") }}

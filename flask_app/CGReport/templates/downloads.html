@@ -7,8 +7,43 @@
     {% if files %}
         {% for file in files %}
             <a target="_self" href= "https://localhost:5000/static/reports/{{file}}" class="btn btn-success mt-2" download>Download {{file}}</a>
+            <button id= {{file}} class="btn btn-danger mt-2 del">Delete {{file}}</button>
             <br />            
         {% endfor %}
     {% endif %}
+    <h2>{{ message }}</h2><br />
     <a href="{{url_for('index')}}" class="btn btn-success mt-2">Home</a>
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+
+            delButtons = $("button")
+            delButtons.on('click',function(e){
+                e.preventDefault();
+                let id = $(this).attr("id");
+                console.log(id);
+                $.ajax({
+                    url: '/downloads',
+                    data: {"data":id},
+                    type: 'POST',
+                    success: function(response) {
+                        console.log(response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+               
+                window.location.href="https://localhost:5000/downloads";
+            });
+        });
+
+    </script>
     {%endblock main%}
+
+    

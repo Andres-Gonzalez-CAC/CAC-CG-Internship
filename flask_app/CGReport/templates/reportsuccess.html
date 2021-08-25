@@ -5,7 +5,8 @@
     {%if message%}
         <h2>{{message}}</h2>
     {%endif%}
-
+    <a target = "_blank" class="btn btn-success mt-2" href="https://docs.google.com/spreadsheets/d/1ic2ApEmscg1lj1MyLf68FqDGkLUDW4fQiMqavRcdWyY/edit#gid=247133777">Go to Google Sheet</a>
+    <br />
     {% if files %}
         {% for file in files %}
             <a target="_self" href= "https://localhost:5000/static/reports/{{file}}" class="btn btn-success mt-2" download>Download {{file}}</a>
