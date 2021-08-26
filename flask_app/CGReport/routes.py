@@ -3,8 +3,8 @@ from CGReport import app, forms
 import pandas as pd
 import os
 from datetime import datetime
-import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import gspread
 
 
 @app.route("/")
